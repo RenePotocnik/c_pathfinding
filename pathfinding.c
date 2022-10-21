@@ -24,17 +24,14 @@ int main() {
     int ex = -1, ey = -1;
     int minDist;
     char grid[HEIGHT][WIDTH];
-
-    FILE *maze;
     char fileName[50];
-    char txt[] = {".txt"};
+
 
     // Prompt user to enter the file name of the maze
     printf("Current maze dimensions: %dx%d\nEnter maze file directory:\n>", HEIGHT, WIDTH);
     scanf("%s", fileName);
-    // Append `.txt` to the end
-//    strcat(fileName, txt);
 
+    FILE *maze;
     maze = fopen(fileName, "r");
     if (!maze) {
         // The file was not opened/found
@@ -76,10 +73,8 @@ int main() {
 
     // Print the grid
     printf("Grid:\n");
-    for (int i = 0; i < HEIGHT; i++)
-    {
-        for (int j = 0; j < WIDTH; j++)
-        {
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
             printf("%c", grid[i][j]);
         }
         printf("\n");
